@@ -12,7 +12,7 @@ function ProgressBar(props) {
         text={`${props.currentQuestionId}/${props.totalQuestions}`}
         styles={buildStyles({
           textSize: '16px',
-          pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
+          pathColor: "#AADDF3",
           textColor: '#000',
           trailColor: '#d6d6d6',
           backgroundColor: '#3e98c7',

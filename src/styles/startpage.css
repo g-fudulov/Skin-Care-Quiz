@@ -1,0 +1,54 @@
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.img-container {
+  height: 525px;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  z-index: 1;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-container {
+  z-index: 10;
+  position: relative;
+  text-align: center;
+  height: 50vh;
+  width: 583px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 600;
+}
+
+p {
+  color: white;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+}

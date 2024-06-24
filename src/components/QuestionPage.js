@@ -3,6 +3,9 @@ import { useParams ,useNavigate } from 'react-router-dom';
 import { allQuestions } from "../data"
 import { useAnswers } from '../context/AnswersContext';
 import ProgressBar from './ProgressBar';
+import '../styles/questionpage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function QuestionPage() {
   const { id } = useParams();
@@ -36,10 +39,12 @@ function QuestionPage() {
   }
 
   return(
-    <div>
+    <div className='questions-wrapper'>
       <div className='head-container'>
-        <h1>{currentQuestion.text}</h1>
-        <ProgressBar currentQuestionId={questionId} totalQuestions={totalSteps} />
+        <h1 className='question-heading'>{currentQuestion.text}</h1>
+        <div className="counter-container">
+          <ProgressBar currentQuestionId={questionId} totalQuestions={totalSteps} />
+        </div>
       </div>
       <div className="options-container">
         {
@@ -57,13 +62,14 @@ function QuestionPage() {
       <div className='buttons-container'>
         {
           questionId > 1 && 
-          <button className="back button" onClick={handlePrevQuestion}>
+          <button className="back" onClick={handlePrevQuestion}>
             Back
           </button>
         }
 
-        <button className="next button" onClick={handleNextQuestion}>
+        <button className="accent" onClick={handleNextQuestion}>
           {questionId < totalSteps ? "Next question": "Submit"}
+          <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
     </div>

@@ -1,0 +1,17 @@
+.pagination-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.circle.active {
+  background-color: #5BC1ED;
+}
