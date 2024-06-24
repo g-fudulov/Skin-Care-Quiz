@@ -19,13 +19,13 @@ function ResultPage() {
 
   useEffect(() => {
     fetchProducts().then(result => {
-      setProducts((result));
+      setProducts(prevProducts => (prevProducts = filterProducts(result)));
     });
   }, []);
 
-  useEffect(() => {
-    setProducts(prevProducts => (prevProducts = filterProducts(prevProducts)))
-  },[answers]);
+  // useEffect(() => {
+  //   setProducts(prevProducts => (prevProducts = filterProducts(prevProducts)))
+  // },[answers]);
 
 
   const totalPages = Math.ceil(products.length / productsPerPage);
